@@ -1,0 +1,129 @@
+[
+    {
+      "image": "https://m.media-amazon.com/images/I/51MfkOZTmrL.jpg",
+      "name": "The Nobel Prize Winners",
+      "quantity": 30,
+      "author_name": "Alice Smith",
+      "category": "Nobel",
+      "short_description": "A comprehensive guide to Nobel laureates and their contributions.",
+      "rating": 4
+    },
+    {
+      "image": "https://www.creativeparamita.com/wp-content/uploads/2021/11/haunted-mansion.jpg",
+      "name": "Haunted Mansion",
+      "quantity": 25,
+      "author_name": "David Johnson",
+      "category": "Horror",
+      "short_description": "A spine-tingling tale of a haunted mansion in a remote town.",
+      "rating": 3
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/A19csFk10lL._AC_UF1000,1000_QL80_.jpg",
+      "name": "Wanderlust: A Traveler's Journey",
+      "quantity": 40,
+      "author_name": "Emily Adams",
+      "category": "Travel",
+      "short_description": "Explore the world with the author's thrilling travel experiences.",
+      "rating": 5
+    },
+    {
+      "image": "https://cdn.exoticindia.com/images/products/original/books-2019/ube134.jpg",
+      "name": "The History of Ancient Civilizations",
+      "quantity": 20,
+      "author_name": "John Brown",
+      "category": "History",
+      "short_description": "A fascinating journey through the rise and fall of ancient civilizations.",
+      "rating": 4
+    },
+    {
+      "image": "https://novapublishers.com/wp-content/uploads/2018/09/9781536132823-e1536756600762.jpg",
+      "name": "Nobel Science: Innovations and Discoveries",
+      "quantity": 35,
+      "author_name": "Sophia Miller",
+      "category": "Nobel",
+      "short_description": "Learn about groundbreaking discoveries by Nobel laureates.",
+      "rating": 4
+    },
+    {
+      "image": "https://cdn.kobo.com/book-images/eefcda0f-c444-4dd0-96e2-ee23feb2f1b0/1200/1200/False/darkwood-1.jpg",
+      "name": "The Haunting in Darkwood Forest",
+      "quantity": 15,
+      "author_name": "Michael Black",
+      "category": "Horror",
+      "short_description": "A bone-chilling story of terror in the woods.",
+      "rating": 2
+    },
+    {
+      "image": "https://i.pinimg.com/564x/81/30/74/81307476b59db24f638b34685b65b31a.jpg",
+      "name": "Journey to the Amazon Rainforest",
+      "quantity": 27,
+      "author_name": "Linda White",
+      "category": "Travel",
+      "short_description": "Embark on an unforgettable adventure in the Amazon rainforest.",
+      "rating": 4
+    },
+    {
+      "image": "https://www.westholmepublishing.com/wordpress/wp-content/uploads/2019/02/9781594161612-742x1024.jpg",
+      "name": "The Chronicles of World Wars 1",
+      "quantity": 22,
+      "author_name": "Robert Davis",
+      "category": "History",
+      "short_description": "An in-depth exploration of the major world wars and their impact.",
+      "rating": 4
+    },
+    {
+      "image": "https://t.ly/1_nen",
+      "name": "The Nobel Prize Pioneers",
+      "quantity": 29,
+      "author_name": "Ella Robinson",
+      "category": "Nobel",
+      "short_description": "Profiles of Nobel laureates who shaped science and peace.",
+      "rating": 5
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/711wl5Ze9kL._AC_UF1000,1000_QL80_.jpg",
+      "name": "The Haunted Asylum",
+      "quantity": 18,
+      "author_name": "Samuel Green",
+      "category": "Horror",
+      "short_description": "A terrifying tale of an abandoned asylum and its dark secrets.",
+      "rating": 3
+    },
+    {
+      "image": "https://images.twinkl.co.uk/tw1n/image/private/t_630_eco/image_repo/fc/41/t2-h-4448-ancient-egypt-book-cover-_ver_1.jpg",
+      "name": "The History of Ancient Egypt",
+      "quantity": 24,
+      "author_name": "Daniel Evans",
+      "category": "History",
+      "short_description": "Unravel the mysteries of ancient Egypt and its pharaohs.",
+      "rating": 4
+    },
+    {
+      "image": "https://fivebooks.com/app/uploads/books/8/02/BC_0307455793.jpg",
+      "name": "Nobel Laureates in Literature",
+      "quantity": 26,
+      "author_name": "Grace Walker",
+      "category": "Nobel",
+      "short_description": "A tribute to the great literary minds awarded the Nobel Prize.",
+      "rating": 4
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Ye-_G_94F6sOfpPH7yhjARlO7SUJedi-aqmIOLSeEO-HQOoz1BQrx6ZlwqJUft41bZY&usqp=CAU",
+      "name": "The Haunting of Blackwater Manor",
+      "quantity": 19,
+      "author_name": "Megan Carter",
+      "category": "Horror",
+      "short_description": "An eerie story of a cursed mansion and its sinister history.",
+      "rating": 2
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61j+6yh7lwL._AC_UF1000,1000_QL80_.jpg",
+      "name": "Wanderlust: Adventures in Asia",
+      "quantity": 38,
+      "author_name": "David Lee",
+      "category": "Travel",
+      "short_description": "Experience the diverse cultures and landscapes of Asia.",
+      "rating": 5
+    }
+  ]
+  

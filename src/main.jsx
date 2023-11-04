@@ -12,6 +12,8 @@ import AllBooks from './Pages/AllBooks/AllBooks';
 import BorrowedBooks from './Pages/BorrowedBooks/BorrowedBooks';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import Books from './Pages/Books/Books';
+import BookDetails from './Components/BookDetails/BookDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
         element : <AddBook></AddBook>
       },
       {
-        path : "/allBooks",
+        path : "/allCategoryBooks",
         element : <AllBooks></AllBooks>
       },
       {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path : "/register",
         element : <Register></Register>
+      },
+      {
+        path : "/books/:category",
+        element : <Books></Books>
+      },
+      {
+        path : "/allBooks/:id",
+        element : <BookDetails></BookDetails>
       }
     ]
   },
