@@ -27,7 +27,7 @@ const Book = ({ book }) => {
                     })}
                 </div>
                 <div className="flex justify-end">
-                    <Link to={`/allBooks/${_id}`}>
+                    <Link to={`/updateBooks/${_id}`}>
                         <button className="badge badge-outline py-3 px-4 hover:bg-rose-500 font-bold hover:text-white">Update</button>
                     </Link>
                 </div>

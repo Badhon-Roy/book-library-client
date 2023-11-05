@@ -57,7 +57,7 @@ const AddBook = () => {
                         </div>
                         <div className="flex-1 space-y-2">
                             <label className="text-xl font-bold">Rating :</label>
-                            <input {...register("rating", { required: true })} className="w-full px-5 rounded-md py-1" placeholder="Author Name" />
+                            <input {...register("rating", { required: true })} className="w-full px-5 rounded-md py-1" placeholder="rating" />
                             <br />
                             {errors.rating && <span className="text-red-600 flex items-center"><BsDot></BsDot> This field is required</span>}
                         </div>
@@ -67,13 +67,13 @@ const AddBook = () => {
                             <label className="text-xl font-bold">Quantity :</label>
                             <input
                                 {...register("quantity", { required: true })}
-                                className="w-full px-5 rounded-md py-1" placeholder="Book Name" />
+                                className="w-full px-5 rounded-md py-1" placeholder="quantity" />
                             <br />
                             {errors.quantity && <span className="text-red-600 flex items-center"><BsDot></BsDot> This field is required</span>}
                         </div>
                         <div className="flex-1 space-y-2">
                             <label className="text-xl font-bold">Short Description :</label>
-                            <input {...register("short_description", { required: true })} className="w-full px-5 rounded-md py-1" placeholder="Author Name" />
+                            <input {...register("short_description", { required: true })} className="w-full px-5 rounded-md py-1" placeholder="short description" />
                             <br />
                             {errors.short_description && <span className="text-red-600 flex items-center"><BsDot></BsDot> This field is required</span>}
                         </div>
@@ -81,12 +81,12 @@ const AddBook = () => {
 
                     <div className="mt-4 space-y-2">
                         <label className="text-xl font-bold">Image URL :</label>
-                        <input {...register("image", { required: true })} className="w-full px-5 rounded-md py-1" placeholder="Author Name" />
+                        <input {...register("image", { required: true })} className="w-full px-5 rounded-md py-1" placeholder="image URL" />
                         <br />
                         {errors.image && <span className="text-red-600 flex items-center"><BsDot></BsDot> This field is required</span>}
                     </div>
 
-                    <input className="btn btn-block mt-5 bg-blue-500 hover:bg-blue-700 text-xlt text-white text-xl" type="submit" />
+                    <input className="btn btn-block mt-5 bg-blue-500 normal-case hover:bg-blue-700 text-xlt text-white text-xl" type="submit" value="Add Book" />
                 </form>
             </div>
         </div>
