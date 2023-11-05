@@ -9,15 +9,14 @@ const BookDetails = () => {
     const { id } = useParams()
     const { user } = useContext(AuthContext)
     const [quantity, setQuantity] = useState(0);
-    const { image, name, author_name, category, short_description, rating } = book;
+    const { _id, image, name, author_name, category, short_description, rating } = book;
 
     const currentDate = new Date();
     const day = currentDate.getDate();
-    const month = currentDate.getMonth() + 1; 
+    const month = currentDate.getMonth() + 1;
     const year = currentDate.getFullYear();
-    console.log(`${day}-${month}-${year}`);
-    
-    console.log(book);
+    const borrowed_date = (`${day}-${month}-${year}`)
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/allBooks/${id}`)
@@ -39,8 +38,7 @@ const BookDetails = () => {
         const form = e.target;
         const date = form.date.value;
         const parsedDate = new Date(date);
-        const borrowedDate = `${parsedDate.getDate()}-${parsedDate.getMonth() + 1}-${parsedDate.getFullYear()}`;
-        console.log(borrowedDate);
+        const return_date = `${parsedDate.getDate()}-${parsedDate.getMonth() + 1}-${parsedDate.getFullYear()}`;
 
         setQuantity(prevQuantity => prevQuantity - 1);
         fetch(`http://localhost:5000/allBooks/${id}`, {
@@ -51,11 +49,26 @@ const BookDetails = () => {
             body: JSON.stringify({ quantity: quantity - 1 }),
         })
             .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    swal("borrow this book", "successful", "success")
-                }
-            })
+            .then(()=>{})
+
+
+
+        const borrowBook = { email: user?.email, userName: user?.displayName, image, name, category, return_date, borrowed_date }
+
+
+        fetch(`http://localhost:5000/borrowBooks/${_id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(borrowBook)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                swal("borrow this book", "successful", "success")
+            }
+        })
 
         const modal = document.getElementById('my_modal_1');
         modal.close();
@@ -101,7 +114,7 @@ const BookDetails = () => {
                                             Return date: <br />
                                             <input type="date" name="date" id="inputField" className="border-2 border-black rounded-md my-4" required />
                                         </label> <br />
-                                        <input type="submit" className="btn" value="Submit" />
+                                        <input type="submit" className="btn bg-gradient-to-r from-cyan-500 to-[#fa0dc3] font-bold text-white" value="Submit" />
                                     </form>
                                 </div>
                             </div>

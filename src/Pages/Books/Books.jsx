@@ -4,21 +4,30 @@ import Book from "../../Components/Book/Book";
 
 
 const Books = () => {
-    const { category} = useParams()
-    const [books , setBooks] = useState([])
-    useEffect(()=>{
+    const { category } = useParams()
+    const [books, setBooks] = useState([])
+    useEffect(() => {
         fetch(`http://localhost:5000/books/${category}`)
-        .then(res => res.json())
-        .then(data => setBooks(data))
-    },[category])
+            .then(res => res.json())
+            .then(data => setBooks(data))
+    }, [category])
     return (
         <div className="max-w-[1200px] mx-auto md:px-5 my-16">
-            <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">All Books {books.length}</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {
-                    books.map(book => <Book key={book._id} book={book}></Book>)
-                }
-            </div>
+            {
+                books.length > 0 ? <div>
+                    <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">All Books {books.length}</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {
+                            books.map(book => <Book key={book._id} book={book}></Book>)
+                        }
+                    </div>
+                </div> : <div >
+                    <div className="flex justify-center items-center mt-5">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/008/845/913/small/online-courses-with-students-sitting-on-books-pile-with-laptops-notebooks-png.png" alt="" />
+                    </div>
+                    <h2 className="md:text-4xl text-3xl font-bold text-center my-16">There are currently no books.</h2>
+                </div>
+            }
         </div>
     );
 };
