@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import swal from "sweetalert";
 import loginAnimationImage from "../../assets/Animation - 1696447943861.json"
-import { AuthContext } from "../../Provider/AuthProvider";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Lottie from 'lottie-react';
 
 const Login = () => {

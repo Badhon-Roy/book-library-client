@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import { AuthContext } from "../../Provider/AuthProvider";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 import RegisterAnimation from "../../assets/animation_lokko1dv.json"
 import Lottie from "lottie-react";
 

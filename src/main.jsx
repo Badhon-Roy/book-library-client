@@ -14,7 +14,8 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Books from './Pages/Books/Books';
 import BookDetails from './Components/BookDetails/BookDetails';
-import AuthProvider from './Provider/AuthProvider';
+import AuthProvider from './AuthProvider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,11 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addBook",
-        element: <AddBook></AddBook>
+        element: <PrivateRoute><AddBook></AddBook></PrivateRoute>
       },
       {
         path: "/allCategoryBooks",
-        element: <AllBooks></AllBooks>
+        element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>
       },
       {
         path: "/borrowedBooks",
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/allBooks/:id",
-        element: <BookDetails></BookDetails>
+        element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>
       }
     ]
   },
