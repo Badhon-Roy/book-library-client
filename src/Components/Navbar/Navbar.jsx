@@ -1,7 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import swal from "sweetalert";
 
 
 const Navbar = () => {
+    const { user , logOut } = useContext(AuthContext)
+    const  navigate = useNavigate()
+    const handleLogout = () =>{
+        logOut()
+        .then(()=>{
+            swal("Log out", "successful", "success")
+            navigate('/')
+        })
+
+    }
     return (
         <div className="bg-red-400">
             <div className="navbar max-w-[1200px] mx-auto md:px-5">
@@ -53,7 +66,9 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <Link to="/" className="btn btn-ghost normal-case text-xl">
+                        <img className="md:w-2/3 w-1/4" src="https://demo.fieldthemes.com/bookshop/demo1/home2/img/bookshophome2-logo-15381021172.jpg" alt="" />
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex gap-7 text-xl font-bold">
@@ -101,18 +116,38 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div>
-                        <button className="btn btn-warning text-xl font-bold normal-case btn-sm">
+                        {
+                            user?.email ? 
+                            <div className="dropdown dropdown-end z-[10]">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                <img src={user?.photoURL } alt="User Photo" />
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <li>
+                                    <a className="justify-between">
+                                        Profile
+                                        <span className="badge">New</span>
+                                    </a>
+                                </li>
+                                <li><a href={`https://mail.google.com/`} target="_blank" rel="noopener noreferrer" >{user?.email}</a></li>
+                                <li><button onClick={handleLogout} className="text-xl font-bold">Logout</button></li>
+                            </ul>
+                        </div>
+                            : <button className="btn btn-warning text-xl font-bold normal-case btn-sm">
 
 
-                            <NavLink
-                                to="/login"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-blue-600" : ""
-                                }
-                            >
-                                Login
-                            </NavLink>
-                        </button>
+                                <NavLink
+                                    to="/login"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "text-blue-600" : ""
+                                    }
+                                >
+                                    Login
+                                </NavLink>
+                            </button>
+                        }
                     </div>
                 </div>
             </div>

@@ -14,42 +14,43 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Books from './Pages/Books/Books';
 import BookDetails from './Components/BookDetails/BookDetails';
+import AuthProvider from './Provider/AuthProvider';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    children : [
+    children: [
       {
-        path : '/',
-        element : <Home></Home>
+        path: '/',
+        element: <Home></Home>
       },
       {
-        path : "/addBook",
-        element : <AddBook></AddBook>
+        path: "/addBook",
+        element: <AddBook></AddBook>
       },
       {
-        path : "/allCategoryBooks",
-        element : <AllBooks></AllBooks>
+        path: "/allCategoryBooks",
+        element: <AllBooks></AllBooks>
       },
       {
-        path : "/borrowedBooks",
-        element : <BorrowedBooks></BorrowedBooks>
+        path: "/borrowedBooks",
+        element: <BorrowedBooks></BorrowedBooks>
       },
       {
-        path : "/login",
-        element : <Login></Login>
+        path: "/login",
+        element: <Login></Login>
       },
       {
-        path : "/register",
-        element : <Register></Register>
+        path: "/register",
+        element: <Register></Register>
       },
       {
-        path : "/books/:category",
-        element : <Books></Books>
+        path: "/books/:category",
+        element: <Books></Books>
       },
       {
-        path : "/allBooks/:id",
-        element : <BookDetails></BookDetails>
+        path: "/allBooks/:id",
+        element: <BookDetails></BookDetails>
       }
     ]
   },
@@ -57,6 +58,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

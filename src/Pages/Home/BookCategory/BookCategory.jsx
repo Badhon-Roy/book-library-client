@@ -2,7 +2,7 @@ import { AiOutlineRight } from "react-icons/ai"
 import { Link } from "react-router-dom";
 
 const BookCategory = ({ bookCategory }) => {
-    const { image, category } = bookCategory;
+    const { image, category } = bookCategory; 
     return (
         <div className="shadow-lg p-2 rounded-2xl bg-red-300">
             <img className="w-full rounded-2xl h-[200px]" src={image} alt="" />
