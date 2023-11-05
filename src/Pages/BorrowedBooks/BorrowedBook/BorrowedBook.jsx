@@ -1,9 +1,8 @@
 
+const BorrowedBook = ({ book   }) => {
+    const {image, name, category, return_date, borrowed_date } = book;
 
-const BorrowedBook = ({ book }) => {
-    const { _id, email, userName, image, name, category, return_date, borrowed_date } = book;
     return (
-
         <div className="my-6 px-4">
             <div className="flex flex-col items-center bg-red-300 border border-gray-200 rounded-lg shadow md:flex-row md:p-0 p-4">
                 <div>

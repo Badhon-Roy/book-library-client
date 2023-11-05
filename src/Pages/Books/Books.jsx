@@ -15,7 +15,11 @@ const Books = () => {
         <div className="max-w-[1200px] mx-auto md:px-5 my-16">
             {
                 books.length > 0 ? <div>
-                    <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">All Books {books.length}</h2>
+                    <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">
+                        {books.slice(0, 1).map(book => (
+                            <span key={book._id}>{book.category}</span>
+                        ))} Books {books.length}
+                    </h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {
                             books.map(book => <Book key={book._id} book={book}></Book>)
