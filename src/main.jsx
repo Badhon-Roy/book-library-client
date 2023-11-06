@@ -17,10 +17,12 @@ import BookDetails from './Components/BookDetails/BookDetails';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateBooks from './Pages/UpdateBooks/UpdateBooks';
+import ErrorPage from './ErrorPage/ErrorPage';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement : <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -37,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/borrowedBooks",
-        element: <BorrowedBooks></BorrowedBooks>
+        element: <PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>
       },
       {
         path: "/login",
@@ -57,7 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path : "/updateBooks/:id",
-        element : <UpdateBooks></UpdateBooks>,
+        element : <PrivateRoute><UpdateBooks></UpdateBooks></PrivateRoute>,
         loader : ({params}) => fetch(`http://localhost:5000/allBooks/${params.id}`)
       }
     ]

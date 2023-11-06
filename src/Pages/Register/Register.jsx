@@ -46,7 +46,7 @@ const Register = () => {
                     .catch(error => {
                         console.log(error);
                     })
-                console.log(res.user);
+                console.log(res?.user);
                 navigate(location?.state ? location.state : '/')
                 swal("Good job", "Register successful", "success").then(() => {
                     window.location.reload();

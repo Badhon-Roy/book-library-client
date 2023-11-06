@@ -5,10 +5,11 @@ import swal from "sweetalert";
 
 const UpdateBooks = () => {
     const book = useLoaderData()
-    const {_id, image, name, author_name, category, quantity ,short_description, rating} = book;
+    const { _id, image, name, author_name, category, quantity, short_description, rating } = book;
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
+        data.quantity = parseInt(data.quantity);
         fetch(`http://localhost:5000/allBooks/${_id}`, {
             method: 'PUT',
             headers: {
@@ -17,8 +18,8 @@ const UpdateBooks = () => {
             body: JSON.stringify(data),
         })
             .then(res => res.json())
-            .then((data)=>{
-                if(data.modifiedCount>0){
+            .then((data) => {
+                if (data.modifiedCount > 0) {
                     swal("Update book", "successful", "success")
                     navigate('/allCategoryBooks')
                 }
@@ -50,7 +51,7 @@ const UpdateBooks = () => {
                         <div className="flex-1 space-y-2">
                             <label className="text-xl font-bold">Category :</label>
                             <select {...register("category", { required: true })} className="w-full px-5 rounded-md py-1" defaultValue={category}>
-                                <option value="" disabled selected>Select a category</option>
+                                <option value="" disabled>Select a category</option>
                                 <option value="Nobel">Nobel</option>
                                 <option value="Horror">Horror</option>
                                 <option value="History">History</option>
@@ -69,8 +70,7 @@ const UpdateBooks = () => {
                     <div className="md:flex mt-4 gap-10 justify-between">
                         <div className="flex-1 space-y-2">
                             <label className="text-xl font-bold">Quantity :</label>
-                            <input
-                                {...register("quantity", { required: true })}
+                            <input type="number" {...register("quantity", { required: true })}
                                 className="w-full px-5 rounded-md py-1" defaultValue={quantity} placeholder="quantity" />
                             <br />
                             {errors.quantity && <span className="text-red-600 flex items-center"><BsDot></BsDot> This field is required</span>}
