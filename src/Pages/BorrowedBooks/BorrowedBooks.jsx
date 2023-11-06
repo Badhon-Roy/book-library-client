@@ -14,12 +14,18 @@ const BorrowedBooks = () => {
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [user])
+
+    const handleBookDelete = (deletedId) => {
+        setBooks(books.filter(book => book._id !== deletedId));
+      };
+
+
     return (
-        <div className="max-w-[1200px] mx-auto md:px-5">
+        <div className="">
             {
                 books.length > 0 ? <div>
                     {
-                        books?.map(book => <BorrowedBook key={book._id} book={book}></BorrowedBook>)
+                        books?.map(book => <BorrowedBook key={book._id} book={book} onDelete={handleBookDelete}></BorrowedBook>)
                     }
                 </div> :
                     <div >

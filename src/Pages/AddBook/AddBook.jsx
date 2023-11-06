@@ -23,9 +23,9 @@ const AddBook = () => {
     };
 
     return (
-        <div className="bg-blue-300 p-10">
+        <div className="bg-blue-300 md:p-10 p-5">
             <h2 className="text-4xl font-bold text-center my-8 underline">Add Book</h2>
-            <div className=" max-w-[1200px] mx-auto md:px-5">
+            <div className=" ">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="md:flex gap-10 justify-between">
                         <div className="flex-1 space-y-2">

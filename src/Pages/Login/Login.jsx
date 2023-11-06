@@ -45,7 +45,7 @@ const Login = () => {
         setShowPassword(!showPassword)
     }
     return (
-        <div className="bg-base-200 max-w-[1200px] mx-auto md:px-5 md:flex items-center ">
+        <div className="bg-base-200  md:flex items-center ">
 
             <div className="flex-1 lg:w-2/4 md:w-3/4 mx-auto py-32 px-4">
                 <div>

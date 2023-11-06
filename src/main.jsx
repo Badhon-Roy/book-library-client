@@ -18,11 +18,13 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateBooks from './Pages/UpdateBooks/UpdateBooks';
 import ErrorPage from './ErrorPage/ErrorPage';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ReadBook from './Components/ReadBook/ReadBook';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement : <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/allCategoryBooks",
         element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
-        loader : () => fetch('http://localhost:5000/allBooks')
+        loader: () => fetch('http://localhost:5000/allBooks')
       },
       {
         path: "/borrowedBooks",
@@ -58,18 +60,26 @@ const router = createBrowserRouter([
         element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>
       },
       {
-        path : "/updateBooks/:id",
-        element : <PrivateRoute><UpdateBooks></UpdateBooks></PrivateRoute>,
-        loader : ({params}) => fetch(`http://localhost:5000/allBooks/${params.id}`)
+        path: "/updateBooks/:id",
+        element: <PrivateRoute><UpdateBooks></UpdateBooks></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/allBooks/${params.id}`)
+      },
+      {
+        path : "/readBook",
+        element : <ReadBook></ReadBook>
       }
     ]
   },
 ]);
 
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

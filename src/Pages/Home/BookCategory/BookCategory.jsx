@@ -5,7 +5,7 @@ const BookCategory = ({ bookCategory }) => {
     const { image, category } = bookCategory; 
     return (
         <div className="shadow-lg p-2 rounded-2xl bg-red-300">
-            <img className="w-full rounded-2xl h-[200px]" src={image} alt="" />
+            <img className="w-full rounded-2xl md:h-[200px] h-[250px]" src={image} alt="" />
             <div className="text-center">
                 <h3 className="md:text-2xl text-xl font-bold  my-4">{category}</h3>
                 <div className="flex justify-center">

@@ -64,7 +64,7 @@ const Register = () => {
         setShowPassword(!showPassword)
     }
     return (
-        <div className="bg-base-200 max-w-[1200px] mx-auto md:px-5 md:flex items-center">
+        <div className="bg-base-200  md:flex items-center">
              <div className="flex-1 md:block hidden">
                 <Lottie
                     animationData={RegisterAnimation}

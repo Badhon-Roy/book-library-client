@@ -12,7 +12,7 @@ const Books = () => {
             .then(data => setBooks(data))
     }, [category])
     return (
-        <div className="max-w-[1200px] mx-auto md:px-5 my-16">
+        <div className=" my-16">
             {
                 books.length > 0 ? <div>
                     <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">

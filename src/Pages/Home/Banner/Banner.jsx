@@ -6,7 +6,7 @@ import 'swiper/css';
 
 const Banner = () => {
     return (
-        <div className='max-w-[1200px] mx-auto md:px-5'>
+        <div className=''>
         <Swiper
             spaceBetween={0}
             slidesPerView={1}

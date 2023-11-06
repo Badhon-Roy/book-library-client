@@ -12,7 +12,7 @@ const BookCategories = () => {
         })
     },[])
     return (
-        <div className="max-w-[1200px] mx-auto md:px-5 my-32">
+        <div className="my-16 md:my-32 md:px-0 px-4">
             <h2 className="md:text-3xl text-2xl text-center mb-8 font-bold">Our Popular <span className="red_text">Category</span></h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                 {

@@ -1,0 +1,15 @@
+/* Default (light) theme */
+:root {
+    --text-color: black;
+    --background-color: white;
+  }
+  
+  /* Dark theme */
+  [data-theme="dark"] {
+    --text-color: white;
+    --background-color: #191919; /* Dark background color */
+  }
+  body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
