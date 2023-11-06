@@ -20,6 +20,13 @@ import UpdateBooks from './Pages/UpdateBooks/UpdateBooks';
 import ErrorPage from './ErrorPage/ErrorPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ReadBook from './Components/ReadBook/ReadBook';
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url,
+).toString();
+
+
 const router = createBrowserRouter([
   {
     path: "/",
