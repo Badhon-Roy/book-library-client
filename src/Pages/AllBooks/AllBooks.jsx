@@ -21,13 +21,13 @@ const AllBooks = () => {
                 <button onClick={handleFilterBook} className="btn btn-secondary md:btn-md btn-sm">Filter by available book</button>
             </div>
             {
-                isClick ? <div className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-5 my-8 md:my-16">
+                isClick ? <div className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-5 md:px-0 px-4 my-8 md:my-16">
                     {
-                        filterBooks.map(book => <Book key={book._id} book={book}></Book>)
+                        filterBooks?.map(book => <Book key={book._id} book={book}></Book>)
                     }
                 </div> : <div className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-5 md:px-0 px-4 my-8 md:my-16">
                     {
-                        books.map(book => <Book key={book._id} book={book}></Book>)
+                        books?.map(book => <Book key={book._id} book={book}></Book>)
                     }
                 </div>
             }

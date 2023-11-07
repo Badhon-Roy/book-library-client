@@ -7,12 +7,12 @@ const Books = () => {
     const { category } = useParams()
     const [books, setBooks] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/books/${category}`)
+        fetch(`https://book-library-server-umber.vercel.app/books/${category}`)
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [category])
     return (
-        <div className=" my-16">
+        <div className="my-16 md:px-0 px-4">
             {
                 books.length > 0 ? <div>
                     <h2 className="md:text-3xl text-2xl font-bold text-center mb-8">
@@ -20,7 +20,7 @@ const Books = () => {
                             <span key={book._id}>{book.category}</span>
                         ))} Books {books.length}
                     </h2>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {
                             books.map(book => <Book key={book._id} book={book}></Book>)
                         }

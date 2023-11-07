@@ -7,7 +7,7 @@ const Book = ({ book }) => {
     return (
         <div className="shadow-xl">
             <img className="md:h-[250px] h-[200px] w-full" src={image} alt="" />
-            <div className="p-4">
+            <div className="md:p-4 p-2">
                 <h2 className="text-xl font-bold">{name}</h2>
                 <p>Quantity: {quantity}</p>
                 <p>Author: <span className="font-bold">{author_name}</span></p>
@@ -28,7 +28,7 @@ const Book = ({ book }) => {
                 </div>
                 <div className="flex justify-end">
                     <Link to={`/updateBooks/${_id}`}>
-                        <button className="badge badge-outline py-3 px-4 hover:bg-rose-500 font-bold hover:text-white">Update</button>
+                        <button className="badge my-3 badge-outline py-3 px-4 hover:bg-rose-500 font-bold hover:text-white">Update</button>
                     </Link>
                 </div>
             </div>

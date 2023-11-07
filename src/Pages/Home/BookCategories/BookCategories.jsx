@@ -5,7 +5,7 @@ import BookCategory from "../BookCategory/BookCategory";
 const BookCategories = () => {
     const [categories , setCategories] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/categories')
+        fetch('https://book-library-server-umber.vercel.app/categories')
         .then(res => res.json())
         .then(data =>{
             console.log(setCategories(data));
