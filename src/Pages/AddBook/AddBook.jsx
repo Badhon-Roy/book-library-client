@@ -1,25 +1,37 @@
 import { useForm } from "react-hook-form";
 import { BsDot } from "react-icons/bs"
 import swal from "sweetalert";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 const AddBook = () => {
+    const axiosSecure = useAxiosSecure()
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
         data.quantity = parseInt(data.quantity);
-        fetch('https://book-library-server-chi.vercel.app/allBooks', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(res => res.json())
-            .then((data) => {
-                if (data.insertedId) {
-                    swal("Book add", "successful", "success")
+        // fetch('https://book-library-server-chi.vercel.app/allBooks', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data),
+        // })
+        //     .then(res => res.json())
+        //     .then((data) => {
+        //         if (data.insertedId) {
+        //             swal("Book add", "successful", "success")
+        //             reset();
+        //         }
+        //     })
+        axiosSecure.post('/allBooks', data)
+            .then(response => {
+                if (response.data.insertedId) {
+                    swal("Book add", "successful", "success");
                     reset();
                 }
             })
+            .catch(error => {
+                console.error("Error:", error);
+            });
     };
 
     return (

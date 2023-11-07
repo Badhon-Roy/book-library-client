@@ -2,9 +2,11 @@
 import { useQuery } from "@tanstack/react-query";
 import Book from "./Book/Book";
 import { useState } from "react";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 
 const AllBooks = () => {
+    const axiosSecure = useAxiosSecure();
     // const [books, setBooks] = useState([])
     const [filterBooks, setFilterBooks] = useState([])
     const [isClick, setIsClick] = useState(false)
@@ -17,8 +19,8 @@ const AllBooks = () => {
     const { data: books, isLoading, isError, error } = useQuery({
         queryKey: ['books'],
         queryFn: async () => {
-            const res = await fetch('https://book-library-server-chi.vercel.app/allBooks', { credentials: "include" })
-            return res.json();
+            const res = await axiosSecure.get('/allBooks')
+            return res.data ;
         }
     })
 
