@@ -21,18 +21,18 @@ const Register = () => {
             setErrorMassage("Password must be at least 6 characters");
             return;
         }
-        // else if (!/^(?=.*[a-z]).*$/.test(password)) {
-        //     setErrorMassage("Password must have at least one Lowercase Character.");
-        //     return;
-        // }
-        // else if(! /^(?=.*[A-Z]).*$/.test(password)){
-        //     setErrorMassage("Password must have at least one Uppercase Character.")
-        //     return;
-        // }
-        // else if(! /^(?=.*[~`!@#$%^&*()--+={}[\]|\\:;"'<>,.?/_₹]).*$/.test(password)){
-        //     setErrorMassage("Password must contain at least one Special Symbol.")
-        //     return;
-        // }
+        else if (!/^(?=.*[a-z]).*$/.test(password)) {
+            setErrorMassage("Password must have at least one Lowercase Character.");
+            return;
+        }
+        else if(! /^(?=.*[A-Z]).*$/.test(password)){
+            setErrorMassage("Password must have at least one Uppercase Character.")
+            return;
+        }
+        else if(! /^(?=.*[~`!@#$%^&*()--+={}[\]|\\:;"'<>,.?/_₹]).*$/.test(password)){
+            setErrorMassage("Password must contain at least one Special Symbol.")
+            return;
+        }
         else {
             setErrorMassage('');
         }

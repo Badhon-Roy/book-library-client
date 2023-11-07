@@ -20,6 +20,7 @@ import UpdateBooks from './Pages/UpdateBooks/UpdateBooks';
 import ErrorPage from './ErrorPage/ErrorPage';
 import ReadBook from './Components/ReadBook/ReadBook';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ReadMore from './Components/ReadMore/ReadMore';
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/readBook",
         element: <ReadBook></ReadBook>
+      },
+      {
+        path : "/readMore",
+        element : <ReadMore></ReadMore>
       }
     ]
   },

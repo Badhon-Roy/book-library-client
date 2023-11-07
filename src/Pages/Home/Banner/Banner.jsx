@@ -1,5 +1,5 @@
-
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css';
@@ -10,8 +10,15 @@ const Banner = () => {
         <Swiper
             spaceBetween={0}
             slidesPerView={1}
-            modules={[Navigation]}
+            modules={[Navigation ,Pagination, Autoplay]}
             navigation
+            pagination={{
+                clickable: true,
+            }}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
         >
             <SwiperSlide>
                 <div className="md:h-[80vh] h-[60vh] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://d4804za1f1gw.cloudfront.net/wp-content/uploads/sites/50/2018/11/hero.jpg")' }}>

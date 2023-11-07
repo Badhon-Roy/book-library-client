@@ -48,12 +48,13 @@ const Navbar = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
+                        <ul tabIndex={0} className="menu-sm dropdown-content border-2 mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li className="">
                                 <NavLink
                                     to="/"
+                                    style={{ width: '100%', display: 'block', paddingLeft: '10px' }}
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-blue-600" : ""
+                                        isPending ? "pending" : isActive ? "text-blue-600 font-bold" : ""
                                     }
                                 >
                                     Home
@@ -62,8 +63,9 @@ const Navbar = () => {
                             <li>
                                 <NavLink
                                     to="/addBook"
+                                    style={{ width: '100%', display: 'block', paddingLeft: '10px' }}
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-blue-600" : ""
+                                        isPending ? "pending" : isActive ? "text-blue-600 font-bold" : ""
                                     }
                                 >
                                     Add Book
@@ -72,8 +74,9 @@ const Navbar = () => {
                             <li>
                                 <NavLink
                                     to="/allCategoryBooks"
+                                    style={{ width: '100%', display: 'block', paddingLeft: '10px' }}
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-blue-600" : ""
+                                        isPending ? "pending" : isActive ? "text-blue-600 font-bold" : ""
                                     }
                                 >
                                     All Books
@@ -82,8 +85,9 @@ const Navbar = () => {
                             <li>
                                 <NavLink
                                     to="/borrowedBooks"
+                                    style={{ width: '100%', display: 'block', paddingLeft: '10px' }}
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-blue-600" : ""
+                                        isPending ? "pending" : isActive ? "text-blue-600 font-bold" : ""
                                     }
                                 >
                                     Borrowed Books
@@ -140,7 +144,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div>
+                    <div className="mr-1">
                         {
                             user?.email ?
                                 <div className="dropdown dropdown-end mr-5 z-[10]">

@@ -1,5 +1,5 @@
-import {FaFacebookF} from "react-icons/fa"
-import {AiOutlineInstagram ,AiOutlineTwitter} from "react-icons/ai"
+import { FaFacebookF } from "react-icons/fa"
+import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai"
 
 const Teams = () => {
     return (
@@ -25,7 +25,9 @@ const Teams = () => {
                     </div>
                 </div>
                 <div>
-                    <img className="w-full" src="https://boighor-demo.myshopify.com/cdn/shop/files/2_84d01e4d-a385-424a-8616-5a140b5cc6ec_large.jpg?v=1613738746" alt="" />
+                    <div>
+                        <img className="w-full" src="https://boighor-demo.myshopify.com/cdn/shop/files/2_84d01e4d-a385-424a-8616-5a140b5cc6ec_large.jpg?v=1613738746" alt="" />
+                    </div>
                     <h2 className="text-center text-2xl font-bold my-3">Madelyayn Robert</h2>
                     <div className="flex justify-center gap-2">
                         <a className="text-2xl" href=""><FaFacebookF className="text-[#0866ff]"></FaFacebookF></a>
