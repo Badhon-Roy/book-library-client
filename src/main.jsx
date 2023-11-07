@@ -19,6 +19,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import UpdateBooks from './Pages/UpdateBooks/UpdateBooks';
 import ErrorPage from './ErrorPage/ErrorPage';
 import ReadBook from './Components/ReadBook/ReadBook';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 
 const router = createBrowserRouter([
@@ -37,8 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/allCategoryBooks",
-        element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
-        loader: () => fetch('https://book-library-server-umber.vercel.app/allBooks')
+        element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>
       },
       {
         path: "/borrowedBooks",
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: "/updateBooks/:id",
         element: <PrivateRoute><UpdateBooks></UpdateBooks></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://book-library-server-umber.vercel.app/allBooks/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/allBooks/${params.id}`)
       },
       {
         path: "/readBook",
@@ -73,11 +73,14 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

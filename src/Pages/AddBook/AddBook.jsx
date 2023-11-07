@@ -6,7 +6,7 @@ const AddBook = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
         data.quantity = parseInt(data.quantity);
-        fetch('https://book-library-server-umber.vercel.app/allBooks', {
+        fetch('http://localhost:5000/allBooks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

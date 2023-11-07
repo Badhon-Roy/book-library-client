@@ -5,7 +5,7 @@ const BorrowedBook = ({ book , onDelete  }) => {
     const { _id, book_id, image, name, category, quantity, return_date, borrowed_date } = book;
 
     const handleReturnBook = () => {
-        fetch(`https://book-library-server-umber.vercel.app/allBooks/${book_id}/increment`, {
+        fetch(`http://localhost:5000/allBooks/${book_id}/increment`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -16,8 +16,9 @@ const BorrowedBook = ({ book , onDelete  }) => {
             .then((res) => res.json())
             .then(() => {});
 
-        // 
-        fetch(`https://book-library-server-umber.vercel.app/borrowBooks/${_id}`, {
+
+            
+        fetch(`http://localhost:5000/borrowBooks/${_id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
