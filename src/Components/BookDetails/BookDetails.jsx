@@ -24,7 +24,7 @@ const BookDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBooks/${id}`)
+        fetch(`https://book-library-server-chi.vercel.app/allBooks/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBook(data)
@@ -33,7 +33,7 @@ const BookDetails = () => {
     }, [id]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/borrowBooks')
+        fetch('https://book-library-server-chi.vercel.app/borrowBooks')
             .then(res => res.json())
             .then(data => setBorrow(data))
     }, [])
@@ -51,7 +51,7 @@ const BookDetails = () => {
         const parsedDate = new Date(date);
         const return_date = `${parsedDate.getDate()}-${parsedDate.getMonth() + 1}-${parsedDate.getFullYear()}`;
         // quantity - 1
-        fetch(`http://localhost:5000/allBooks/${id}/decrement`, {
+        fetch(`https://book-library-server-chi.vercel.app/allBooks/${id}/decrement`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ const BookDetails = () => {
         const borrowBook = { email: user?.email, userName: user?.displayName, image, name, category, return_date, borrowed_date, book_id: _id }
 
 
-        fetch(`http://localhost:5000/borrowBooks/${_id}`, {
+        fetch(`https://book-library-server-chi.vercel.app/borrowBooks/${_id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

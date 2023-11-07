@@ -8,7 +8,7 @@ const Books = () => {
     const { category } = useParams()
     // const [books, setBooks] = useState([])
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/books/${category}`)
+    //     fetch(`https://book-library-server-chi.vercel.app/books/${category}`)
     //         .then(res => res.json())
     //         .then(data => setBooks(data))
     // }, [category])
@@ -16,7 +16,7 @@ const Books = () => {
     const { data: books, isLoading, isError, error } = useQuery({
         queryKey: ['books' , category],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/books/${category}`)
+            const res = await fetch(`https://book-library-server-chi.vercel.app/books/${category}`)
             return res.json();
         }
     })

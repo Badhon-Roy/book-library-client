@@ -9,7 +9,7 @@ const AllBooks = () => {
     const [filterBooks, setFilterBooks] = useState([])
     const [isClick, setIsClick] = useState(false)
     // useEffect(() => {
-    //     fetch('http://localhost:5000/allBooks' , {credentials : "include"})
+    //     fetch('https://book-library-server-chi.vercel.app/allBooks' , {credentials : "include"})
     //         .then(res => res.json())
     //         .then(data => setBooks(data))
     // }, []);
@@ -17,11 +17,11 @@ const AllBooks = () => {
     const { data: books, isLoading, isError, error } = useQuery({
         queryKey: ['books'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allBooks', { credentials: "include" })
+            const res = await fetch('https://book-library-server-chi.vercel.app/allBooks', { credentials: "include" })
             return res.json();
         }
     })
-    
+
     if (isError) {
         return <div className="flex justify-center items-center h-[50vh]">
             <h3 className="text-2xl text-red-600 font-bold">{error.message}</h3>

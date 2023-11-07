@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 const BookCategories = () => {
     // const [categories , setCategories] = useState([])
     // useEffect(()=>{
-    //     fetch('http://localhost:5000/categories')
+    //     fetch('https://book-library-server-chi.vercel.app/categories')
     //     .then(res => res.json())
     //     .then(data =>{
     //         console.log(setCategories(data));
@@ -15,7 +15,7 @@ const BookCategories = () => {
     const { data: categories , isLoading, isError, error } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/categories')
+            const res = await fetch('https://book-library-server-chi.vercel.app/categories')
             return res.json();
         }
     })
