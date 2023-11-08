@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser)
             setLoading(false)
             if (currentUser) {
-                axios.post('https://book-library-server-chi.vercel.app/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://book-library-production.up.railway.app/jwt', loggedUser, { withCredentials: true })
                     .then((res) => {
                         console.log('token response', res.data);
                     })
@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
                     });
             }
             else {
-                axios.post('https://book-library-server-chi.vercel.app/logout', loggedUser, { withCredentials: true })
+                axios.post('https://book-library-production.up.railway.app/logout', {}, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                     })
