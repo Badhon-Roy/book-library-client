@@ -5,6 +5,7 @@ import swal from "sweetalert";
 import loginAnimationImage from "../../assets/Animation - 1696447943861.json"
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Lottie from 'lottie-react';
+import {FcGoogle} from 'react-icons/fc'
 
 const Login = () => {
     const [errorMassage, setErrorMassage] = useState(null)
@@ -86,14 +87,10 @@ const Login = () => {
                         {
                             errorMassage && <p className="text-red-500">{errorMassage}</p>
                         }
-                        <div className="text-center">
-                            <span>
-                                ------------ 
-                                <button onClick={handleGoogleLogin} className="text-xl font-bold p-2 mx-1 hover:text-blue-600">
-                                    Continue with Google
+                        <div className="flex justify-center">
+                                <button onClick={handleGoogleLogin} className="border-2 rounded-md gap-2 text-xl flex items-center font-bold p-2 mx-1 hover:text-blue-600">
+                                    Continue with <FcGoogle className="text-2xl"></FcGoogle>
                                 </button>
-                                ------------
-                            </span>
                         </div>
 
 

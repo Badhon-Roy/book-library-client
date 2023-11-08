@@ -1,12 +1,12 @@
-
+import logoImg from "../../assets/image/sun-logo-removebg-preview.png"
 
 const Footer = () => {
     return (
         <div className="bg-gray-600">
                 <footer className="footer max-w-[1400px] mx-auto md:px-5  footer-center p-10 text-white">
                     <aside>
-                       <img src="https://demo.fieldthemes.com/bookshop/demo1/home2/img/bookshophome2-logo-15381021172.jpg" alt="" />
-                        <p className="font-bold text-2xl">
+                       <img className="w-1/4" src={logoImg} alt="" />
+                        <p className="font-bold text-xl md:text-2xl">
                             Book Library Management Ltd. <br />Providing reliable tech since 1992
                         </p>
                         <p className="">Copyright  &copy; 2023 - All right reserved</p>

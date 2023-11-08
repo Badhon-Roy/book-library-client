@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import swal from "sweetalert";
 import "./Navbar.css"
+import logoImg from "../../assets/image/sun-logo-removebg-preview.png"
 
 
 const Navbar = () => {
@@ -30,8 +31,6 @@ const Navbar = () => {
 
 
 
-
-
     const handleLogout = () => {
         logOut()
             .then(() => {
@@ -41,7 +40,7 @@ const Navbar = () => {
 
     }
     return (
-        <div className="bg-red-400">
+        <div className="bg-red-300">
             <div className="navbar max-w-[1400px] mx-auto md:px-5">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -96,7 +95,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to="/" className="pl-6">
-                        <img className="md:w-2/3 w-3/4 " src="https://demo.fieldthemes.com/bookshop/demo1/home2/img/bookshophome2-logo-15381021172.jpg" alt="" />
+                        <img className="w-[60px] " src={logoImg} alt="" />
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -147,7 +146,7 @@ const Navbar = () => {
                     <div className="mr-1">
                         {
                             user?.email ?
-                                <div className="dropdown dropdown-end mr-5 z-[10]">
+                                <div className="dropdown dropdown-end md:mr-5 z-[10]">
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                         <div className="w-12 rounded-full">
                                             <img src={user?.photoURL} alt="User Photo" />
