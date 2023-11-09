@@ -28,7 +28,7 @@ const Banner = () => {
                             Books Your Bridge to Success
                             </h2>
                             <p className="text-white md:text-left md:text-xl md:font-bold ">It encapsulates the idea that reading is a transformative journey, where knowledge serves as the bridge to achieving one is aspirations.</p>
-                            <button className='red_bg hover:bg-blue-600 py-2 px-4 normal-case rounded-md text-white mt-4'>Learn more</button>
+                            <button className='btn btn-secondary btn-sm normal-case text-white mt-4'>Learn more</button>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ const Banner = () => {
                             Books Your Bridge to Success
                             </h2>
                             <p className="text-white md:text-left md:text-xl md:font-bold ">It encapsulates the idea that reading is a transformative journey, where knowledge serves as the bridge to achieving one is aspirations.</p>
-                            <button className='red_bg hover:bg-blue-600 py-2 px-4 normal-case rounded-md text-white mt-4'>Learn more</button>
+                            <button className='btn btn-secondary btn-sm normal-case text-white mt-4'>Learn more</button>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@ const Banner = () => {
                             Books Your Bridge to Success
                             </h2>
                             <p className="text-white md:text-left md:text-xl md:font-bold ">It encapsulates the idea that reading is a transformative journey, where knowledge serves as the bridge to achieving one is aspirations.</p>
-                            <button className='red_bg hover:bg-blue-600 py-2 px-4 normal-case rounded-md text-white mt-4'>Learn more</button>
+                             <button className='btn btn-secondary btn-sm normal-case text-white mt-4'>Learn more</button>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ const Banner = () => {
                             Books Your Bridge to Success
                             </h2>
                             <p className="text-white md:text-left md:text-xl md:font-bold ">It encapsulates the idea that reading is a transformative journey, where knowledge serves as the bridge to achieving one is aspirations.</p>
-                            <button className='red_bg hover:bg-blue-600 py-2 px-4 normal-case rounded-md text-white mt-4'>Learn more</button>
+                             <button className='btn btn-secondary btn-sm normal-case text-white mt-4'>Learn more</button>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ const Banner = () => {
                             Books Your Bridge to Success
                             </h2>
                             <p className="text-white md:text-left md:text-xl md:font-bold ">It encapsulates the idea that reading is a transformative journey, where knowledge serves as the bridge to achieving one is aspirations.</p>
-                            <button className='red_bg hover:bg-blue-600 py-2 px-4 normal-case rounded-md text-white mt-4'>Learn more</button>
+                             <button className='btn btn-secondary btn-sm normal-case text-white mt-4'>Learn more</button>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,6 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import swal from "sweetalert";
 import "./Navbar.css"
-import logoImg from "../../assets/image/sun-logo-removebg-preview.png"
 
 
 const Navbar = () => {
@@ -40,7 +39,7 @@ const Navbar = () => {
 
     }
     return (
-        <div className="bg-red-300">
+        <div className="bg-[#fd7c7c]">
             <div className="navbar max-w-[1400px] mx-auto md:px-5">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -95,7 +94,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to="/" className="pl-6">
-                        <img className="w-[60px] " src={logoImg} alt="" />
+                        <img className="w-[150px]" src="https://bookpresstheme.com/wp-content/themes/bookpress/assets/images/logo.png" alt="" />
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -160,7 +159,7 @@ const Navbar = () => {
                                         <li><button onClick={handleLogout} className="text-xl font-bold">Logout</button></li>
                                     </ul>
                                 </div>
-                                : <button className="btn btn-warning text-xl font-bold normal-case btn-sm">
+                                : <button className="btn text-xl font-bold normal-case btn-sm">
 
 
                                     <NavLink

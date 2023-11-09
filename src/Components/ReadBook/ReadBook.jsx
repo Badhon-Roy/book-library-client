@@ -14,7 +14,7 @@ const ReadBook = () => {
 
             </div>
             <div className="flex justify-end my-8 px-5">
-                <ReactToPrint trigger={() => <button className="btn btn-info">Convert to PDF</button>} content={() => ref.current}></ReactToPrint>
+                <ReactToPrint trigger={() => <button className="btn btn-secondary">Convert to PDF</button>} content={() => ref.current}></ReactToPrint>
             </div>
         </div>
     );
