@@ -10,14 +10,14 @@ const BorrowedBooks = () => {
 
 
     // useEffect(() => {
-    //     fetch(`https://book-library-production.up.railway.app/borrowBooks?email=${user?.email}`)
+    //     fetch(`https://book-library-server-chi.vercel.app/borrowBooks?email=${user?.email}`)
     //         .then(res => res.json())
     //         .then(data => setBooks(data))
     // }, [user])
     const { data, isLoading, isError, error, refetch } = useQuery({
         queryKey: ['books'],
         queryFn: async () => {
-            const res = await fetch(`https://book-library-production.up.railway.app/borrowBooks?email=${user?.email}`);
+            const res = await fetch(`https://book-library-server-chi.vercel.app/borrowBooks?email=${user?.email}`);
             const data = await res.json();
             return data;
         }
