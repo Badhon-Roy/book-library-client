@@ -8,7 +8,7 @@ const AddBook = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
         data.quantity = parseInt(data.quantity);
-        // fetch('https://book-library-production.up.railway.app/allBooks', {
+        // fetch('https://book-library-server-chi.vercel.app/allBooks', {
         //     method: 'POST',
         //     headers: {
         //         'Content-Type': 'application/json',

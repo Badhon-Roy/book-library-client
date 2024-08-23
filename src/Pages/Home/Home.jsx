@@ -5,6 +5,7 @@ import Teams from "./Teams/Teams";
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const Home = () => {
 
@@ -24,8 +25,8 @@ const Home = () => {
             <Banner></Banner>
             <BookCategories></BookCategories>
             <div data-aos="fade-right"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine">
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
                 <div className="items-center lg:flex gap-8 my-16">
                     <div className="flex-1">
                         <img className="md:h-[500px] w-full object-cover rounded" src="https://img.freepik.com/premium-photo/robot-reading-book_842454-1065.jpg" alt="" />
@@ -60,6 +61,10 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <MessengerCustomerChat
+                pageId="<PAGE_ID>"
+                appId="939756967795089"
+            />
         </div>
     );
 };

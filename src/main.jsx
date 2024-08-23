@@ -64,7 +64,7 @@ const router = createBrowserRouter([
       {
         path: "/updateBooks/:id",
         element: <PrivateRoute><UpdateBooks></UpdateBooks></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://book-library-production.up.railway.app/allBooks/${params.id}`)
+        loader: ({ params }) => fetch(`https://book-library-server-chi.vercel.app/allBooks/${params.id}`)
       },
       {
         path: "/readBook",
